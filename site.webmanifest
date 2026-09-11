@@ -1,7 +1,9 @@
 {
   "name": "Jaisson",
   "short_name": "Jaisson",
+  "description": "Jaisson. You found the right one.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#f7f9fb",
   "theme_color": "#f7f9fb",
