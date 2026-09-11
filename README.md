@@ -10,6 +10,9 @@ Minimal landing page for **jaisson.com** / **jaisson.com.br**.
 - very slow background movement
 - subtle pointer-following light effect on desktop
 - small click easter egg on the logo
+- automatic light and dark appearance based on Stuttgart time
+- discreet About and idle easter eggs
+- custom 404 page
 - responsive mobile/desktop layout
 - J favicon for browser tabs
 - Apple touch icon + web manifest
@@ -55,5 +58,5 @@ stop email delivery.
 
 ## Analytics
 
-No analytics tracking code is included yet. It can be added later once the
-Google Analytics Measurement ID is available.
+Google Analytics is included in `index.html` using measurement ID
+`G-37DHLEPC72`.

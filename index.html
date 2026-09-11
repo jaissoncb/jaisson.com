@@ -13,9 +13,25 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jaisson</title>
-  <meta name="description" content="You found the right Jaisson.">
+  <title>Jaisson — Yes, this one.</title>
+  <meta name="description" content="Jaisson. You found the right one.">
+  <meta name="application-name" content="Jaisson">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="format-detection" content="telephone=no">
   <meta name="theme-color" content="#f7f9fb">
+  <link rel="canonical" href="https://jaisson.com/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jaisson.com/">
+  <meta property="og:site_name" content="Jaisson">
+  <meta property="og:title" content="Jaisson — Yes, this one.">
+  <meta property="og:description" content="Jaisson. You found the right one.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Jaisson — Yes, this one.">
+  <meta name="twitter:description" content="Jaisson. You found the right one.">
+
+  <script src="theme.js"></script>
 
   <link rel="icon" href="assets/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
@@ -40,7 +56,22 @@
     <p class="tagline" id="tagline" aria-live="polite">
       You found the right Jaisson.
     </p>
+
+    <div class="about">
+      <button
+        class="about-toggle"
+        id="about-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="about-copy"
+      >About</button>
+      <p class="about-copy" id="about-copy" hidden>
+        This was supposed to be a simple website.
+      </p>
+    </div>
   </main>
+
+  <p class="idle-message" id="idle-message" aria-live="polite" aria-atomic="true"></p>
 
   <script src="script.js"></script>
 </body>
