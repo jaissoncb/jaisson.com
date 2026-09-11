@@ -15,14 +15,25 @@ Minimal landing page for **jaisson.com** / **jaisson.com.br**.
 - Apple touch icon + web manifest
 - no footer and no year/date to maintain
 
-## GitHub Pages
+## Repository and deployment
 
-1. Create a public GitHub repository.
-2. Upload the contents of this folder to the repository root.
-3. In GitHub: **Settings → Pages**.
-4. Choose **Deploy from a branch**.
-5. Select `main` and `/ (root)`.
-6. Under **Custom domain**, use the domain you want as primary.
+The site lives at the root of the
+[`jaissoncb/jaisson.com`](https://github.com/jaissoncb/jaisson.com) repository.
+GitHub Pages publishes the `main` branch from `/ (root)`, using `jaisson.com`
+as the custom domain.
+
+To update the site locally:
+
+```sh
+git pull --ff-only
+# edit and test the files
+git add .
+git commit -m "Describe the change"
+git push origin main
+```
+
+Do not place the site inside an additional nested folder: `index.html`,
+`CNAME`, `robots.txt`, and `sitemap.xml` must remain in the repository root.
 
 ### Two domains
 
