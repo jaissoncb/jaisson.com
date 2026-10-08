@@ -42,6 +42,18 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Recolor the original transparent logo for dark mode without changing its artwork. -->
+  <svg aria-hidden="true" width="0" height="0" style="position:absolute;overflow:hidden" focusable="false">
+    <defs>
+      <filter id="dark-logo-colors" color-interpolation-filters="sRGB">
+        <feColorMatrix type="matrix" values="
+          0 -1.1667 0 0 1.055
+          0 -0.2955 0 0 0.986
+          0 -0.2955 0 0 0.998
+          0 0 0 1 0"/>
+      </filter>
+    </defs>
+  </svg>
   <main class="hero" aria-label="Jaisson">
     <button class="brand" id="brand" type="button" aria-label="Jaisson">
       <img

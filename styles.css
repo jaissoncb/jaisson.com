@@ -31,7 +31,7 @@
   --grid: rgba(190, 231, 235, 0.025);
   --logo-shadow: rgba(0, 0, 0, 0.25);
   --logo-shadow-hover: rgba(0, 0, 0, 0.32);
-  --logo-treatment: brightness(2.05) saturate(0.82);
+  --logo-treatment: url("#dark-logo-colors");
   --focus: rgba(66, 200, 203, 0.9);
   color-scheme: dark;
 }
