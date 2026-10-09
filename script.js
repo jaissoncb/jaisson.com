@@ -48,20 +48,29 @@ const translations = {
   ja: { tagline: "お探しの Jaisson はこちらです。", confirmed: "確認済み。", about: "このサイトについて", aboutCopy: "シンプルなウェブサイトにするはずでした。", idle: "まだいますか？" }
 };
 
+function normalizeLocale(rawLocale) {
+  const normalized = rawLocale.replace("_", "-");
+  const lower = normalized.toLowerCase();
+
+  if (lower === "pt-br") return "pt-BR";
+  if (lower === "pt" || lower.startsWith("pt-")) return "pt-PT";
+  if (lower === "zh-tw" || lower === "zh-hk" || lower.includes("hant")) return "zh-TW";
+  if (lower === "zh" || lower.startsWith("zh-")) return "zh-CN";
+
+  const base = lower.split("-")[0];
+  return translations[base] ? base : null;
+}
+
 function resolveLocale() {
+  const testLocale = new URLSearchParams(window.location.search).get("lang");
+  const testMatch = testLocale ? normalizeLocale(testLocale) : null;
+  if (testMatch) return testMatch;
+
   const requested = navigator.languages?.length ? navigator.languages : [navigator.language || "en"];
 
   for (const rawLocale of requested) {
-    const normalized = rawLocale.replace("_", "-");
-    const lower = normalized.toLowerCase();
-
-    if (lower === "pt-br") return "pt-BR";
-    if (lower.startsWith("pt")) return "pt-PT";
-    if (lower.startsWith("zh-tw") || lower.startsWith("zh-hk") || lower.includes("hant")) return "zh-TW";
-    if (lower.startsWith("zh")) return "zh-CN";
-
-    const base = lower.split("-")[0];
-    if (translations[base]) return base;
+    const match = normalizeLocale(rawLocale);
+    if (match) return match;
   }
 
   return "en";
